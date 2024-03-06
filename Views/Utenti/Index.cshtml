@@ -1,0 +1,32 @@
+﻿@model IEnumerable<AgenziaSpedizioni.Models.Utente>
+
+<h2>Utenti</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Cognome)</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cognome)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IDUtente }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IDUtente })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

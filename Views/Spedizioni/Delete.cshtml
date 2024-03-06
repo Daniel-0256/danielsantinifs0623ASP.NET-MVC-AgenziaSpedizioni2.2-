@@ -1,0 +1,44 @@
+﻿@model AgenziaSpedizioni.Models.Spedizione
+
+@{
+    ViewBag.Title = "Elimina Spedizione";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Sei sicuro di voler eliminare questa spedizione?</h3>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.DataSpedizione)</dt>
+        <dd>@Html.DisplayFor(model => model.DataSpedizione)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Peso)</dt>
+        <dd>@Html.DisplayFor(model => model.Peso)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.CittaDestinataria)</dt>
+        <dd>@Html.DisplayFor(model => model.CittaDestinataria)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.IndirizzoDestinatario)</dt>
+        <dd>@Html.DisplayFor(model => model.IndirizzoDestinatario)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.NomeDestinatario)</dt>
+        <dd>@Html.DisplayFor(model => model.NomeDestinatario)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.CostoSpedizione)</dt>
+        <dd>@Html.DisplayFor(model => model.CostoSpedizione)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.DataConsegnaPrevista)</dt>
+        <dd>@Html.DisplayFor(model => model.DataConsegnaPrevista)</dd>
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions">
+        <input type="submit" value="Elimina" class="btn btn-danger" /> |
+        @Html.ActionLink("Annulla", "Index")
+    </div>
+}

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AgenziaSpedizioni.Models.Spedizione>
+
+<h2>Spedizioni</h2>
+
+<p>
+    @Html.ActionLink("Crea Nuova Spedizione", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DataSpedizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CittaDestinataria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeDestinatario)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSpedizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CittaDestinataria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDestinatario)
+            </td>
+            <td>
+                @Html.ActionLink("Dettagli", "Details", new { id = item.IDSpedizione }) |
+                @Html.ActionLink("Modifica", "Edit", new { id = item.IDSpedizione }) |
+                @Html.ActionLink("Elimina", "Delete", new { id = item.IDSpedizione })
+            </td>
+        </tr>
+    }
+
+</table>
